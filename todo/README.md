@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Todo App
 
-## Getting Started
+A clean, responsive Todo application built with **Next.js “App Router”** and React hooks—featuring form management, schema validation, toast notifications, and persistent storage. Styled effortlessly with Tailwind CSS and enhanced by Heroicons for interactive controls.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Technologies & Libraries
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Next.js (13+)** – React framework with file-based routing and server/client components  
+- **React Hooks** – `useState` for local state, `useEffect` for side effects & hydration  
+- **Formik** – Declarative form state management  
+- **Yup** – Schema-based validation for Formik  
+- **React Toastify** – Accessible toast notifications for success, info, warning, and error feedback  
+- **Tailwind CSS** – Utility-first styling for rapid, responsive design  
+- **Heroicons** – SVG icon components (checkmark & trash)  
+- **localStorage** – Browser storage to persist and rehydrate todos across sessions  
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Installation & Setup
 
-## Learn More
+1. **Clone the repository**
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   git clone https://github.com/hasamuddinafz/Nextjs-Projects.git
+   cd your-repo
+# Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Add, complete & delete todos**
+  - **Add Todo** opens a modal form
+  - Toggle *done/undone* via the check-mark icon
+  - Remove items via the trash icon
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Form handling & validation**
+  - Formik manages form state (`values`, `touched`, `errors`, `isSubmitting`)
+  - Yup enforces non-empty, trimmed input
+  - Inline error messages under the input field
 
-## Deploy on Vercel
+- **Toast notifications**
+  - Success when a todo is added
+  - Info when status toggles
+  - Warning on delete
+  - Error on empty submission
+  - Auto-dismiss after 2 seconds, positioned top-right
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Persistent storage**
+  - Load from **localStorage** on mount
+  - Save to **localStorage** on any change
+  - Graceful handling of JSON parse errors
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Filtering**
+  - *All*, *Active* (incomplete), *Completed* filters
+  - Current filter button is highlighted
+
+- **Responsive & styled**
+  - Tailwind CSS for spacing, typography, colours and animations
+  - Gradient background, rounded cards, smooth transitions
+
+---
+
+# Project Structure
+
+```text
+├── pages/  
+│   └── index.js         # Main client component (“use client”)  
+├── public/              # Static assets (images, icons)  
+├── styles/              # Global CSS & Tailwind config  
+├── package.json         # Dependencies & scripts  
+└── tailwind.config.js   # Tailwind customization  
